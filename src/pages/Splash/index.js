@@ -13,6 +13,7 @@ const Splash = ({ navigation }) => {
         <View style={styles.container}>
             {/* <ImageBackground source={map} style={styles.logo}></ImageBackground> */}
             <Text style={styles.text}>My Maps</Text>
+            <Text>Hallo</Text>
         </View>
     )
 }
