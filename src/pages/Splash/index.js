@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, ImageBackground } from 'react-native'
 import React, { useEffect } from 'react'
+import { pokeball } from '../../assets/icon';
 
 const Splash = ({ navigation }) => {
 
@@ -11,9 +12,8 @@ const Splash = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            {/* <ImageBackground source={map} style={styles.logo}></ImageBackground> */}
-            <Text style={styles.text}>My Maps</Text>
-            <Text>Hallo</Text>
+            <ImageBackground source={pokeball} style={styles.logo}></ImageBackground>
+            <Text style={styles.text}>My Pokemon</Text>
         </View>
     )
 }
