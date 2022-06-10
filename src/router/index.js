@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Splash, Login, Register, Home } from '../pages';
+import { Splash, Login, Register, Home, Detail, Pokebag } from '../pages';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,6 +11,8 @@ const MainApp = () => {
       <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
       <Stack.Screen name="Register" component={Register} options={{ headerShown: false }} />
       <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
+      <Stack.Screen name="Detail" component={Detail} options={{ headerShown: false }} />
+      <Stack.Screen name="Pokebag" component={Pokebag} options={{ headerShown: false }} />
     </Stack.Navigator>
   )
 }

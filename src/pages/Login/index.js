@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react'
 import auth from '@react-native-firebase/auth'
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import TouchID from 'react-native-touch-id';
-import Home from '../Home';
+import Home from '../DashboardScreen';
+import { pokeball } from '../../assets/icon';
 
 const Login = ({ navigation }) => {
 
@@ -49,6 +50,7 @@ const Login = ({ navigation }) => {
                 TouchID.authenticate('to demo this react-native component', optionalConfigObject)
                     .then(success => {
                         console.log(success)
+                        // navigation.replace('Home')
                         alert('Authenticated Successfully, Signed in with Fingerprint!');
                     })
                     .catch(error => {
@@ -84,8 +86,8 @@ const Login = ({ navigation }) => {
         return (
             <View style={styles.container}>
                 <View style={styles.applicationName}>
-                    {/* <ImageBackground source={map} style={styles.logo}></ImageBackground> */}
-                    <Text style={styles.appName}>My Maps</Text>
+                    <ImageBackground source={pokeball} style={styles.logo}></ImageBackground>
+                    <Text style={styles.appName}>My Pokemon</Text>
                 </View>
                 <View style={styles.textInputContainer}>
                     <TextInput style={styles.input} placeholder="Email" onChangeText={text => setEmail(text)} value={email} placeholderTextColor={'black'} />
@@ -110,8 +112,7 @@ const Login = ({ navigation }) => {
     }
     return (
         <View style={styles.container2}>
-            {/* {navigation.replace('MainApp')} */}
-            <Home/>
+            {navigation.replace('Home')}
         </View >
     );
 }
@@ -180,11 +181,11 @@ const styles = StyleSheet.create({
     loginText: {
         color: 'white'
     },
-    container2: {
-        justifyContent: 'flex-end',
-        alignItems: 'center',
-        flex: 1
-    },
+    // container2: {
+    //     justifyContent: 'flex-end',
+    //     alignItems: 'center',
+    //     flex: 1
+    // },
     logoutButton: {
         alignItems: 'center',
         marginBottom: 150,
